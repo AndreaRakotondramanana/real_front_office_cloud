@@ -1,0 +1,49 @@
+.header {
+    position: relative;
+    height: 10px;
+}
+
+/* .header a Link{
+    color: black;
+} */
+
+.events-title{
+    color: #3D405B;
+}
+
+.tab a{
+    color: #3D405B;
+}
+
+.Profil p{
+    color: white;
+}
+
+.ProfilAutre p{
+    color: white;
+}
+
+.Recherche select{
+    width: 50%;
+    height: 34px;
+    margin: 6px;
+    border-radius: 10px;
+    border-color: transparent;
+    padding: 5px;
+}
+
+.Recherche input{
+    margin: 10px;
+}
+
+.mess1{
+    float: left;
+    /* background-color: #3D405B; */
+    width: 60%;
+}
+
+.mess2{
+    float: right;
+    /* background-color: rgb(202, 137, 52); */
+    width: 60%;
+}
