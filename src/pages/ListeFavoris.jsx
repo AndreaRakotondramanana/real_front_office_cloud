@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import '../assets/css/styleAndrea.css';
+import { Link } from 'react-router-dom';
 
 const images = [
   "car5.jpg",
@@ -29,8 +30,6 @@ function ListeFavoris() {
             <div class="col-lg-6 col-12">
 
               <h1 class="text-white mb-4 pb-2">Liste favoris.</h1>
-
-              <a href="#section_2" class="btn custom-btn smoothscroll me-3">Learn more</a>
             </div>
 
           </div>
@@ -52,23 +51,23 @@ function ListeFavoris() {
 
             <div class="col-lg-6 col-12 mb-5 mb-lg-0">
               <div class="custom-block-image-wrap">
-                <a href="event-detail.html">
+                <Link to="/">
                   <img src={images[0]} class="custom-block-image img-fluid" alt="" />
 
                   <i class="custom-block-icon bi-link"></i>
-                </a>
+                </Link>
 
                 <div class="custom-block-date-wrap">
                   <strong class="text-white">18 Feb 2023</strong>
                 </div>
 
                 <div class="custom-btn-wrap">
-                  <a href="event-detail.html" class="btn custom-btn">Retirer</a>
+                  <Link to="/" class="btn custom-btn">Retirer</Link>
                 </div>
               </div>
 
               <div class="custom-block-info">
-                <a href="event-detail.html" class="events-title mb-2">Ciquer ici pour voir les details</a>
+                <Link to="/detailAnnonce" class="events-title mb-2">Ciquer ici pour voir les details</Link>
                   <div class="d-flex flex-wrap align-items-center mb-1">
                     <span class="custom-block-span">Marque:</span>
 
@@ -94,23 +93,23 @@ function ListeFavoris() {
 
             <div class="col-lg-6 col-12 mb-5 mb-lg-0">
               <div class="custom-block-image-wrap">
-                <a href="event-detail.html">
+                <Link to="/">
                   <img src={images[1]} class="custom-block-image img-fluid" alt="" />
 
                   <i class="custom-block-icon bi-link"></i>
-                </a>
+                </Link>
 
                 <div class="custom-block-date-wrap">
                   <strong class="text-white">18 Feb 2023</strong>
                 </div>
 
                 <div class="custom-btn-wrap">
-                  <a href="event-detail.html" class="btn custom-btn">Retirer</a>
+                  <Link to="/" class="btn custom-btn">Retirer</Link>
                 </div>
               </div>
 
               <div class="custom-block-info">
-                <a href="event-detail.html" class="events-title mb-2">Ciquer ici pour voir les details</a>
+                <Link to="/detailAnnonce" class="events-title mb-2">Ciquer ici pour voir les details</Link>
                   <div class="d-flex flex-wrap align-items-center mb-1">
                     <span class="custom-block-span">Marque:</span>
 

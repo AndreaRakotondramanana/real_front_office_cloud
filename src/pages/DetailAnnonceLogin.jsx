@@ -1,6 +1,7 @@
 import React from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import { Link } from 'react-router-dom';
 
 const images = [
   "car4.jpg"
@@ -27,8 +28,6 @@ function DetailAnnonceLogin() {
             <div class="col-lg-6 col-12">
 
               <h1 class="text-white mb-4 pb-2">Detail annonce login.</h1>
-
-              <a href="#section_2" class="btn custom-btn smoothscroll me-3">Learn more</a>
             </div>
 
           </div>
@@ -140,7 +139,7 @@ function DetailAnnonceLogin() {
                     <h4 class="mb-3">Prix: 1000000 Ar</h4>
                   </div>
 
-                  <a href="#section_2" class="btn custom-btn smoothscroll me-3">Contacter</a>
+                  <Link to="/" class="btn custom-btn smoothscroll me-3">Contacter</Link>
                 </div>
 
 

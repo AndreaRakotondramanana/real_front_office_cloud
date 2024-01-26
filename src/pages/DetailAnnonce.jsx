@@ -27,8 +27,6 @@ function DetailAnnonce() {
             <div class="col-lg-6 col-12">
 
               <h1 class="text-white mb-4 pb-2">Detail annonce.</h1>
-
-              <a href="#section_2" class="btn custom-btn smoothscroll me-3">Learn more</a>
             </div>
 
           </div>

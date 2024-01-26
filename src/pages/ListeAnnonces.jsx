@@ -70,18 +70,18 @@ function ListeAnnonces() {
 
               <div class="col-lg-4 col-md-8 col-12 order-1 order-lg-0">
                 <div class="custom-block-image-wrap">
-                  <a href="event-detail.html">
+                  <Link to="/">
                     <img src={images[0]} class="custom-block-image img-fluid"
                       alt="" />
 
                     <i class="custom-block-icon bi-link"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
 
               <div class="col-lg-6 col-12 order-3 order-lg-0">
                 <div class="custom-block-info mt-2 mt-lg-0">
-                  <a href="event-detail.html" class="events-title mb-3"><Link to="/detailAnnonce">Detail</Link></a>
+                  <Link to="/detailAnnonce">Detail</Link>
 
                   <div class="d-flex flex-wrap align-items-center mb-1">
                     <span class="custom-block-span">Marque:</span>
@@ -107,7 +107,7 @@ function ListeAnnonces() {
                     </div>
 
                     <div class="d-flex align-items-center ms-lg-auto">
-                      <a href="event-detail.html" class="btn custom-btn">Ajouter aux favoris</a>
+                      <Link to="/listeFavoris" class="btn custom-btn">Ajouter aux favoris</Link>
                     </div>
                   </div>
                 </div>
@@ -126,18 +126,18 @@ function ListeAnnonces() {
 
               <div class="col-lg-4 col-md-8 col-12 order-1 order-lg-0">
                 <div class="custom-block-image-wrap">
-                  <a href="event-detail.html">
+                  <Link to="/">
                     <img src={images[1]}
                       class="custom-block-image img-fluid" alt="" />
 
                     <i class="custom-block-icon bi-link"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
 
               <div class="col-lg-6 col-12 order-3 order-lg-0">
                 <div class="custom-block-info mt-2 mt-lg-0">
-                  <a href="event-detail.html" class="events-title mb-3"><Link to="/detailAnnonce">Detail</Link></a>
+                  <Link to="/detailAnnonce">Detail</Link>
                   <div class="d-flex flex-wrap align-items-center mb-1">
                     <span class="custom-block-span">Marque:</span>
 
@@ -162,7 +162,7 @@ function ListeAnnonces() {
                     </div>
 
                     <div class="d-flex align-items-center ms-lg-auto">
-                      <a href="event-detail.html" class="btn custom-btn">Ajouter aux favoris</a>
+                      <Link to="/listeFavoris" class="btn custom-btn">Ajouter aux favoris</Link>
                     </div>
                   </div>
                 </div>

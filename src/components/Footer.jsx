@@ -8,13 +8,10 @@ function Footer() {
           <div class="row">
 
             <div class="col-lg-6 col-12 me-auto mb-5 mb-lg-0">
-              <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="images/logo.png" class="navbar-brand-image img-fluid" alt=""/>
                   <span class="navbar-brand-text">
                     Tiya
                     <small>Golf Club</small>
                   </span>
-              </a>
             </div>
 
             <div class="col-lg-3 col-12">
@@ -34,19 +31,7 @@ function Footer() {
             </div>
 
             <div class="col-lg-2 col-12 ms-auto">
-              <ul class="social-icon mt-lg-5 mt-3 mb-4">
-                <li class="social-icon-item">
-                  <a href="#" class="social-icon-link bi-instagram"></a>
-                </li>
-
-                <li class="social-icon-item">
-                  <a href="#" class="social-icon-link bi-twitter"></a>
-                </li>
-
-                <li class="social-icon-item">
-                  <a href="#" class="social-icon-link bi-whatsapp"></a>
-                </li>
-              </ul>
+              
               <p class="copyright-text">Design: <a rel="nofollow" href="https://templatemo.com"
                 target="_blank">TemplateMo</a></p>
 

@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import '../assets/css/styleAndrea.css';
+import { Link } from 'react-router-dom';
 
 const images = [
   "she.jpg"
@@ -45,11 +46,11 @@ function Profil() {
 
                       <ul class="social-icon">
                         <li class="social-icon-item">
-                          <a href="#" class="social-icon-link bi-twitter"></a>
+                          <Link to="/" class="social-icon-link bi-twitter"></Link>
                         </li>
 
                         <li class="social-icon-item">
-                          <a href="#" class="social-icon-link bi-whatsapp"></a>
+                          <Link to="/" class="social-icon-link bi-whatsapp"></Link>
                         </li>
                       </ul>
                     </div>
@@ -102,32 +103,32 @@ function Profil() {
                       <td scope="row" class="text-start">Truc</td>
                       <td scope="row" class="text-start">Truc</td>
                       <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start"><a href=''>Details</a></td>
-                      <td scope="row" class="text-start"><a href=''>Supprimer</a></td>
+                      <td scope="row" class="text-start"><Link to="/">Details</Link></td>
+                      <td scope="row" class="text-start"><Link to="/">Supprimer</Link></td>
                     </tr>
                     <tr>
                       <td scope="row" class="text-start">Truc</td>
                       <td scope="row" class="text-start">Truc</td>
                       <td scope="row" class="text-start">Truc</td>
                       <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start"><a href=''>Details</a></td>
-                      <td scope="row" class="text-start"><a href=''>Supprimer</a></td>
+                      <td scope="row" class="text-start"><Link to="/">Details</Link></td>
+                      <td scope="row" class="text-start"><Link to="/">Supprimer</Link></td>
                     </tr>
                     <tr>
                       <td scope="row" class="text-start">Truc</td>
                       <td scope="row" class="text-start">Truc</td>
                       <td scope="row" class="text-start">Truc</td>
                       <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start"><a href=''>Details</a></td>
-                      <td scope="row" class="text-start"><a href=''>Supprimer</a></td>
+                      <td scope="row" class="text-start"><Link to="/">Details</Link></td>
+                      <td scope="row" class="text-start"><Link to="/">Supprimer</Link></td>
                     </tr>
                     <tr>
                       <td scope="row" class="text-start">Truc</td>
                       <td scope="row" class="text-start">Truc</td>
                       <td scope="row" class="text-start">Truc</td>
                       <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start"><a href=''>Details</a></td>
-                      <td scope="row" class="text-start"><a href=''>Supprimer</a></td>
+                      <td scope="row" class="text-start"><Link to="/">Details</Link></td>
+                      <td scope="row" class="text-start"><Link to="/">Supprimer</Link></td>
                     </tr>
 
                   </tbody>
