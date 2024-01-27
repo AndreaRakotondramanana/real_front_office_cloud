@@ -40,7 +40,7 @@ function Connection() {
 
             <div class="col-lg-5 col-12 mx-auto">
               <h4 class="mb-4 pb-lg-2">Rejoignez nous !</h4>
-              <form action="#" method="post" class="custom-form membership-form shadow-lg" role="form">
+              <form action="#" method="post" class="custom-form membership-form shadow-lg">
                 <h4 class="text-white mb-4">Connectez vous</h4>
 
                 <div class="form-floating">

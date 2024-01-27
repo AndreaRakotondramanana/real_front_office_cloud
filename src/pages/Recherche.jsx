@@ -29,7 +29,7 @@ function Recherche() {
               <div class="section-bg-image-block">
                 <h2 class="mb-lg-3">Rechercher</h2>
 
-                <form action="#" method="get" class="custom-form mt-lg-4 mt-2" role="form">
+                <form action="#" method="get" class="custom-form mt-lg-4 mt-2">
                   <div className='row'>
                     <div className='col-lg-4 col-4'>
                       <p>

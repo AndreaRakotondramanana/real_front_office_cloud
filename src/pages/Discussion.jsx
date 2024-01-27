@@ -39,7 +39,7 @@ function Discussion() {
                 </div>
 
               </div>
-              <form action="#" method="get" class="custom-form mt-lg-4 mt-2" role="form">
+              <form action="#" method="get" class="custom-form mt-lg-4 mt-2">
                 {/* <div class="input-group input-group-lg"> */}
                   <input type="text" name="email" id="email"
                     class="form-control" placeholder="Votre message" required=""/>

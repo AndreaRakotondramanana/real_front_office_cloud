@@ -99,36 +99,36 @@ function Profil() {
 
                   <tbody>
                     <tr>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start"><Link to="/">Details</Link></td>
-                      <td scope="row" class="text-start"><Link to="/">Supprimer</Link></td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start"><Link to="/">Details</Link></td>
+                      <td class="text-start"><Link to="/">Supprimer</Link></td>
                     </tr>
                     <tr>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start"><Link to="/">Details</Link></td>
-                      <td scope="row" class="text-start"><Link to="/">Supprimer</Link></td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start"><Link to="/">Details</Link></td>
+                      <td class="text-start"><Link to="/">Supprimer</Link></td>
                     </tr>
                     <tr>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start"><Link to="/">Details</Link></td>
-                      <td scope="row" class="text-start"><Link to="/">Supprimer</Link></td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start"><Link to="/">Details</Link></td>
+                      <td class="text-start"><Link to="/">Supprimer</Link></td>
                     </tr>
                     <tr>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start"><Link to="/">Details</Link></td>
-                      <td scope="row" class="text-start"><Link to="/">Supprimer</Link></td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start"><Link to="/">Details</Link></td>
+                      <td class="text-start"><Link to="/">Supprimer</Link></td>
                     </tr>
 
                   </tbody>

@@ -28,7 +28,7 @@ function ListeDiscussions() {
               <div class="section-bg-image-block">
                 <h2 class="mb-lg-3">Faite votre recherche</h2>
 
-                <form action="#" method="get" class="custom-form mt-lg-4 mt-2" role="form">
+                <form action="#" method="get" class="custom-form mt-lg-4 mt-2">
                   <div class="input-group input-group-lg">
                     <span class="input-group-text bi-envelope" id="basic-addon1"></span>
 

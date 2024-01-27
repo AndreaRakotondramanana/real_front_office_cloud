@@ -33,7 +33,7 @@ function Footer() {
             <div class="col-lg-2 col-12 ms-auto">
               
               <p class="copyright-text">Design: <a rel="nofollow" href="https://templatemo.com"
-                target="_blank">TemplateMo</a></p>
+                >TemplateMo</a></p>
 
             </div>
 

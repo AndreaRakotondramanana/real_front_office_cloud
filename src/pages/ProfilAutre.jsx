@@ -95,24 +95,24 @@ function ProfilAutre() {
 
                   <tbody>
                     <tr>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start"><Link to="/">Details</Link></td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start"><Link to="/">Details</Link></td>
                     </tr>
                     <tr>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start"><Link to="/">Details</Link></td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start"><Link to="/">Details</Link></td>
                     </tr>
                     <tr>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start"><Link to="/">Details</Link></td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start"><Link to="/">Details</Link></td>
                     </tr>
                     <tr>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start">Truc</td>
-                      <td scope="row" class="text-start"><Link to="/">Details</Link></td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start">Truc</td>
+                      <td class="text-start"><Link to="/">Details</Link></td>
                     </tr>
 
                   </tbody>
