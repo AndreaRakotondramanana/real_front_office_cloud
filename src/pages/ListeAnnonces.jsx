@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import { Link } from 'react-router-dom';
+import '../assets/css/styleAndrea.css';
 
 const images = [
   "car1.jpg",
@@ -81,17 +82,25 @@ function ListeAnnonces() {
 
               <div class="col-lg-6 col-12 order-3 order-lg-0">
                 <div class="custom-block-info mt-2 mt-lg-0">
-                  <Link to="/detailAnnonce">Detail</Link>
+                  <Link to="/detailAnnonce" className='lien'>Pour voir les details cliquer ici</Link>
+
+                  <div class="d-flex flex-wrap align-items-center mb-1">
+                    <span class="custom-block-span">Date:</span>
+                    <p class="mb-0">Chose</p>
+                  </div>
 
                   <div class="d-flex flex-wrap align-items-center mb-1">
                     <span class="custom-block-span">Marque:</span>
-
                     <p class="mb-0">BMW</p>
                   </div>
 
                   <div class="d-flex flex-wrap align-items-center mb-1">
-                    <span class="custom-block-span">Type:</span>
+                    <span class="custom-block-span">Model:</span>
+                    <p class="mb-0">Chose</p>
+                  </div>
 
+                  <div class="d-flex flex-wrap align-items-center mb-1">
+                    <span class="custom-block-span">Categorie:</span>
                     <p class="mb-0">Chose</p>
                   </div>
 
@@ -137,16 +146,25 @@ function ListeAnnonces() {
 
               <div class="col-lg-6 col-12 order-3 order-lg-0">
                 <div class="custom-block-info mt-2 mt-lg-0">
-                  <Link to="/detailAnnonce">Detail</Link>
+                  <Link to="/detailAnnonce" className='lien'>Pour voir les details cliquer ici</Link>
+
+                  <div class="d-flex flex-wrap align-items-center mb-1">
+                    <span class="custom-block-span">Date:</span>
+                    <p class="mb-0">Chose</p>
+                  </div>
+
                   <div class="d-flex flex-wrap align-items-center mb-1">
                     <span class="custom-block-span">Marque:</span>
-
                     <p class="mb-0">BMW</p>
                   </div>
 
                   <div class="d-flex flex-wrap align-items-center mb-1">
-                    <span class="custom-block-span">Type:</span>
+                    <span class="custom-block-span">Model:</span>
+                    <p class="mb-0">Chose</p>
+                  </div>
 
+                  <div class="d-flex flex-wrap align-items-center mb-1">
+                    <span class="custom-block-span">Categorie:</span>
                     <p class="mb-0">Chose</p>
                   </div>
 

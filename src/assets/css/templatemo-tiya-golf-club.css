@@ -467,7 +467,7 @@ strong {
 }
 
 .navbar-brand-image {
-  width: 48px;
+  width: auto;
   height: 48px;
 }
 
