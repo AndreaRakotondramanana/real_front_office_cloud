@@ -1,6 +1,8 @@
 import React from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/css/styleAndrea.css';
 
@@ -10,6 +12,20 @@ const images = [
 ];
 
 function ListeAnnonces() {
+  const [voitureAnnonces, setVoitureAnnonces] = useState([]);
+
+  useEffect(() => {
+    const fetchVoitureAnnonces = async () => {
+      try {
+        const response = await axios.get('https://voiture-production-247e.up.railway.app/api/annonce_details/valide');
+        setVoitureAnnonces(response.data);
+      } catch (error) {
+        console.error('Error fetching voiture annonces:', error);
+      }
+    };
+
+    fetchVoitureAnnonces();
+  }, []);
   return (
     <div className='listeAnnonces'>
       <Header />
@@ -59,134 +75,63 @@ function ListeAnnonces() {
               <h2 class="mb-lg-3">Liste des annonces</h2>
             </div>
 
-            <div class="row custom-block custom-block-bg">
-              <div class="col-lg-2 col-md-4 col-12 order-2 order-md-0 order-lg-0">
-                <div
-                  class="custom-block-date-wrap d-flex d-lg-block d-md-block align-items-center mt-3 mt-lg-0 mt-md-0">
-                  <h6 class="custom-block-date mb-lg-1 mb-0 me-3 me-lg-0 me-md-0">24</h6>
-
-                  <strong class="text-white">Feb 2048</strong>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-8 col-12 order-1 order-lg-0">
-                <div class="custom-block-image-wrap">
-                  <Link to="/">
-                    <img src={images[0]} class="custom-block-image img-fluid"
-                      alt="" />
-
-                    <i class="custom-block-icon bi-person"></i>
-                  </Link>
-                </div>
-              </div>
-
-              <div class="col-lg-6 col-12 order-3 order-lg-0">
-                <div class="custom-block-info mt-2 mt-lg-0">
-                  <Link to="/detailAnnonceLogin" className='lien'>Pour voir les details cliquer ici</Link>
-
-                  <div class="d-flex flex-wrap align-items-center mb-1">
-                    <span class="custom-block-span">Date:</span>
-                    <p class="mb-0">Chose</p>
+            <div>
+              {voitureAnnonces.map(voitureAnnonce => (
+                <div key={voitureAnnonce.id_annonce} className="row custom-block custom-block-bg">
+                  <div className="col-lg-2 col-md-4 col-12 order-2 order-md-0 order-lg-0">
+                    <div className="custom-block-date-wrap d-flex d-lg-block d-md-block align-items-center mt-3 mt-lg-0 mt-md-0">
+                      <h6 className="custom-block-date mb-lg-1 mb-0 me-3 me-lg-0 me-md-0">24</h6>
+                      <strong className="text-white">Feb 2048</strong>
+                    </div>
                   </div>
 
-                  <div class="d-flex flex-wrap align-items-center mb-1">
-                    <span class="custom-block-span">Marque:</span>
-                    <p class="mb-0">BMW</p>
+                  <div className="col-lg-4 col-md-8 col-12 order-1 order-lg-0">
+                    <div className="custom-block-image-wrap">
+                      <Link to="/">
+                        <img src={images[0]} className="custom-block-image img-fluid" alt="" />
+                        <i className="custom-block-icon bi-link"></i>
+                      </Link>
+                    </div>
                   </div>
 
-                  <div class="d-flex flex-wrap align-items-center mb-1">
-                    <span class="custom-block-span">Model:</span>
-                    <p class="mb-0">Chose</p>
-                  </div>
+                  <div className="col-lg-6 col-12 order-3 order-lg-0">
+                    <div className="custom-block-info mt-2 mt-lg-0">
+                      <div className="d-flex flex-wrap align-items-center mb-1">
+                        <span className="custom-block-span">Annee:</span>
+                        <p className="mb-0">{voitureAnnonce.annee}</p>
+                      </div>
 
-                  <div class="d-flex flex-wrap align-items-center mb-1">
-                    <span class="custom-block-span">Categorie:</span>
-                    <p class="mb-0">Chose</p>
-                  </div>
+                      <div className="d-flex flex-wrap align-items-center mb-1">
+                        <span className="custom-block-span">Marque:</span>
+                        <p className="mb-0">{voitureAnnonce.marque}</p>
+                      </div>
 
-                  <div class="d-flex flex-wrap border-top mt-4 pt-3">
+                      <div className="d-flex flex-wrap align-items-center mb-1">
+                        <span className="custom-block-span">Model:</span>
+                        <p className="mb-0">{voitureAnnonce.model}</p>
+                      </div>
 
-                    <div class="mb-4 mb-lg-0">
+                      <div className="d-flex flex-wrap align-items-center mb-1">
+                        <span className="custom-block-span">Categorie:</span>
+                        <p className="mb-0">{voitureAnnonce.categorie}</p>
+                      </div>
 
-                      <div class="d-flex flex-wrap align-items-center">
-                        <span class="custom-block-span">Prix:</span>
-
-                        <p class="mb-0">$250</p>
+                      <div className="d-flex flex-wrap border-top mt-4 pt-3">
+                        <div className="mb-4 mb-lg-0">
+                          <div className="d-flex flex-wrap align-items-center">
+                            <span className="custom-block-span">Prix:</span>
+                            <p className="mb-0">{voitureAnnonce.prix}</p>
+                          </div>
+                        </div>
+                        <div className="d-flex align-items-center ms-lg-auto">
+                          <Link to={"/detailAnnonceLogin/"+voitureAnnonce.id_annonce} className="btn custom-btn">Voir les détails</Link>
+                        </div>
                       </div>
                     </div>
-
-                    <div class="d-flex align-items-center ms-lg-auto">
-                      <Link to="/listeFavoris" class="btn custom-btn">Ajouter aux favoris</Link>
-                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
-
-            <div class="row custom-block custom-block-bg">
-              <div class="col-lg-2 col-md-4 col-12 order-2 order-md-0 order-lg-0">
-                <div
-                  class="custom-block-date-wrap d-flex d-lg-block d-md-block align-items-center mt-3 mt-lg-0 mt-md-0">
-                  <h6 class="custom-block-date mb-lg-1 mb-0 me-3 me-lg-0 me-md-0">28</h6>
-
-                  <strong class="text-white">Feb 2048</strong>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-8 col-12 order-1 order-lg-0">
-                <div class="custom-block-image-wrap">
-                  <Link to="/">
-                    <img src={images[1]}
-                      class="custom-block-image img-fluid" alt="" />
-
-                    <i class="custom-block-icon bi-link"></i>
-                  </Link>
-                </div>
-              </div>
-
-              <div class="col-lg-6 col-12 order-3 order-lg-0">
-                <div class="custom-block-info mt-2 mt-lg-0">
-                  <Link to="/detailAnnonce" className='lien'>Pour voir les details cliquer ici</Link>
-
-                  <div class="d-flex flex-wrap align-items-center mb-1">
-                    <span class="custom-block-span">Date:</span>
-                    <p class="mb-0">Chose</p>
-                  </div>
-
-                  <div class="d-flex flex-wrap align-items-center mb-1">
-                    <span class="custom-block-span">Marque:</span>
-                    <p class="mb-0">BMW</p>
-                  </div>
-
-                  <div class="d-flex flex-wrap align-items-center mb-1">
-                    <span class="custom-block-span">Model:</span>
-                    <p class="mb-0">Chose</p>
-                  </div>
-
-                  <div class="d-flex flex-wrap align-items-center mb-1">
-                    <span class="custom-block-span">Categorie:</span>
-                    <p class="mb-0">Chose</p>
-                  </div>
-
-                  <div class="d-flex flex-wrap border-top mt-4 pt-3">
-
-                    <div class="mb-4 mb-lg-0">
-
-                      <div class="d-flex flex-wrap align-items-center">
-                        <span class="custom-block-span">Prix:</span>
-
-                        <p class="mb-0">$250</p>
-                      </div>
-                    </div>
-
-                    <div class="d-flex align-items-center ms-lg-auto">
-                      <Link to="/listeFavoris" class="btn custom-btn">Ajouter aux favoris</Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>

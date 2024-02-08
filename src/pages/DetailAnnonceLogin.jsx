@@ -1,13 +1,15 @@
 import React from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const images = [
-  "car4.jpg"
+  "car1.jpg"
 ];
 
 function DetailAnnonceLogin() {
+  const {id_annonce} = useParams();
+
   return (
     <div className='DetailAnnonceLogin'>
       <Header />
