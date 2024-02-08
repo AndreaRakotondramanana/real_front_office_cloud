@@ -9,7 +9,7 @@ const images = [
   "car2.jpg"
 ];
 
-function ListeAnnonces() {
+function ResultatRechercheVoiture() {
   return (
     <div className='listeAnnonces'>
       <Header />
@@ -27,14 +27,7 @@ function ListeAnnonces() {
           <div class="row">
 
             <div class="col-lg-6 col-12 mb-5 mb-lg-0">
-              <h2 class="text-white">Fivarotana fiara</h2>
-
-              <h1 class="cd-headline rotate-1 text-white mb-4 pb-2">
-                <span>Occasion is </span>
-                <span class="cd-words-wrapper">
-                  <b class="is-visible">Bae</b>
-                </span>
-              </h1>
+              <h2 class="text-white">Resultat recherche</h2>
             </div>
 
             <div class="col-lg-6 col-12">
@@ -54,10 +47,6 @@ function ListeAnnonces() {
       <section class="events-section section-bg section-padding" id="section_4">
         <div class="container">
           <div class="row">
-
-            <div class="col-lg-12 col-12">
-              <h2 class="mb-lg-3">Liste des annonces</h2>
-            </div>
 
             <div class="row custom-block custom-block-bg">
               <div class="col-lg-2 col-md-4 col-12 order-2 order-md-0 order-lg-0">
@@ -195,4 +184,4 @@ function ListeAnnonces() {
   );
 }
 
-export default ListeAnnonces;
+export default ResultatRechercheVoiture;

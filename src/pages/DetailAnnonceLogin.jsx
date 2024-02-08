@@ -139,7 +139,9 @@ function DetailAnnonceLogin() {
                     <h4 class="mb-3">Prix: 1000000 Ar</h4>
                   </div>
 
-                  <Link to="/" class="btn custom-btn smoothscroll me-3">Contacter</Link>
+                  <Link to="/discussion" class="btn custom-btn smoothscroll me-3">Contacter</Link>
+                  <br/>
+                  <Link to="/listeFavoris" class="btn custom-btn smoothscroll me-3">Ajouter favoris</Link>
                 </div>
 
 

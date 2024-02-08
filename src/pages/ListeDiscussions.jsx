@@ -30,7 +30,6 @@ function ListeDiscussions() {
 
                 <form action="#" method="get" class="custom-form mt-lg-4 mt-2">
                   <div class="input-group input-group-lg">
-                    <span class="input-group-text bi-envelope" id="basic-addon1"></span>
 
                     <input type="text" name="text" id="text" pattern="[^ @]*@[^ @]*"
                       class="form-control" placeholder="Nom" required="" />

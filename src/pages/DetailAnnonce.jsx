@@ -3,7 +3,8 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 
 const images = [
-  "car3.jpg"
+  "car3.jpg",
+  "car7.jpg"
 ];
 
 function DetailAnnonce() {

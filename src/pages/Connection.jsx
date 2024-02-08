@@ -1,8 +1,64 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 
 function Connection() {
+  const navigate = useNavigate();
+  const [error, setError] = useState(null);
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(false);
+    const apiUrl = 'https://voiture-production-247e.up.railway.app/api/log/signin';
+
+    try {
+      // const data = axios.toFormData(formData);
+      const data = new FormData();
+      data.append('email', formData.email); // Assuming email is the email
+      data.append('password', formData.password);
+      let config = {
+        method: 'post',
+        maxBodyLength: Infinity,
+        url: apiUrl,
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+        data: data
+      };
+      const response = await axios.request(config);
+
+      if (response.data.error) {
+        // Check if there's an error in the response
+        console.error('Erreur lors de la requête:', response.data.error);
+        setError(response.data.error);
+      } else {
+        console.log('Login successful:', response.data);
+        localStorage.setItem('token', response.data.token);
+        navigate("/profil")
+        setFormData({
+          email: '',
+          password: '',
+        });
+
+      }
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi des données à railway:', error);
+    }
+  }
   return (
     <div className='Connection'>
       <Header />
@@ -40,24 +96,25 @@ function Connection() {
 
             <div class="col-lg-5 col-12 mx-auto">
               <h4 class="mb-4 pb-lg-2">Rejoignez nous !</h4>
-              <form action="#" method="post" class="custom-form membership-form shadow-lg">
+              <form onSubmit={handleSubmit} class="custom-form membership-form shadow-lg">
                 <h4 class="text-white mb-4">Connectez vous</h4>
 
                 <div class="form-floating">
                   <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control"
-                    placeholder="Email address" required="" />
+                    placeholder="Email address" value={formData.email} onChange={handleChange} required="" />
 
                   <label for="floatingInput">Email address</label>
                 </div>
 
                 <div class="form-floating">
-                  <input type='password' class="form-control" id="Pass" name="Pass"
-                    placeholder="Password"/>
+                  <input type='password' class="form-control" id="Pass" name="password"
+                    placeholder="Password" value={formData.password} onChange={handleChange} />
 
                   <label for="floatingTextarea">Password</label>
                 </div>
 
-                <button type="submit" class="form-control">Valider</button>
+                {error && <p style={{ color: 'red' }}>{error}</p>}
+                <button className="submit button" type='submit'>Se connecter</button>
               </form>
             </div>
           </div >

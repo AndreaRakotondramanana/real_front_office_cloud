@@ -54,3 +54,21 @@
     font-size: 20px;
     font-weight: bold;
 }
+
+.ListeDiscussion2 li{
+    color: #3D405B;
+    list-style: none;
+    padding: 10px;
+}
+
+.header li{
+    padding: 10px;
+}
+
+.liste a{
+    color: #3D405B;
+}
+
+.custom-block-image-wrap{
+    margin-top: 40px;
+}
