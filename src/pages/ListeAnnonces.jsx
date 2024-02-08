@@ -76,7 +76,7 @@ function ListeAnnonces() {
             </div>
 
             <div>
-              {voitureAnnonces.map(voitureAnnonce => (
+              {voitureAnnonces.map((voitureAnnonce) => (
                 <div key={voitureAnnonce.id_annonce} className="row custom-block custom-block-bg">
                   <div className="col-lg-2 col-md-4 col-12 order-2 order-md-0 order-lg-0">
                     <div className="custom-block-date-wrap d-flex d-lg-block d-md-block align-items-center mt-3 mt-lg-0 mt-md-0">
@@ -88,7 +88,7 @@ function ListeAnnonces() {
                   <div className="col-lg-4 col-md-8 col-12 order-1 order-lg-0">
                     <div className="custom-block-image-wrap">
                       <Link to="/">
-                        <img src={images[0]} className="custom-block-image img-fluid" alt="" />
+                        <img src={} className="custom-block-image img-fluid" alt="" />
                         <i className="custom-block-icon bi-link"></i>
                       </Link>
                     </div>
