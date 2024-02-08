@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import '../assets/css/styleAndrea.css';
+import { Link } from 'react-router-dom';
 
 function Recherche() {
   return (
@@ -95,7 +96,9 @@ function Recherche() {
 
                     </div>
                   </div>
-                  <button type="submit" class="form-control">Valider</button>
+                  <button type="submit" class="form-control">
+                    <Link to="/resultatRechercheVoiture">Rechercher</Link>
+                  </button>
                 </form>
               </div>
             </div>

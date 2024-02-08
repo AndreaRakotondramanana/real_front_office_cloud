@@ -1,4 +1,3 @@
-import React from 'react';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -46,11 +45,10 @@ function Connection() {
         // Check if there's an error in the response
         console.error('Erreur lors de la requête:', response.data.error);
         setError(response.data.error);
-        setLoading(false);
       } else {
         console.log('Login successful:', response.data);
         localStorage.setItem('token', response.data.token);
-        navigate("/Home")
+        navigate("/profil")
         setFormData({
           email: '',
           password: '',
