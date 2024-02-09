@@ -5,6 +5,7 @@ import DetailAnnonceLogin from './pages/DetailAnnonceLogin';
 import ListeFavoris from './pages/ListeFavoris';
 import Profil from './pages/Profil';
 import Recherche from './pages/Recherche';
+import DetailFavoris from './pages/DetailFavoris';
 import ResultatRechercheVoiture from './pages/ResultatRechercheVoiture';
 import Connection from './pages/Connection';
 import ListeDiscussion2 from './pages/listeDiscussion2';
@@ -25,6 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/detailAnnonceLogin/:id_voiture" element={<DetailAnnonceLogin />} />
+          <Route path="/detailAnnoncefav/:id_voiture" element={<DetailFavoris />} />
           <Route path="/listeFavoris" element={<ListeFavoris />} />
           <Route path="/profil" element={<Profil />} />
           <Route path="/recherche" element={<Recherche />} />
