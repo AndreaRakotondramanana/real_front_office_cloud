@@ -11,30 +11,7 @@ function DetailFavoris() {
     const [loading, setLoading] = useState(true);
     const history = useNavigate();
 
-    const handleFavoris = async (id) => {
-        const token = localStorage.getItem('token');
-        if (!token) {
-            history('/connection');
-            return;
-        }
-        const url = `https://voiture-production-247e.up.railway.app/api/annonce/favoris/${id}`;
 
-        try {
-            const config = {
-                method: 'post',
-                url: url,
-                headers: {
-                    'authorization': token
-                },
-            };
-
-            const response = await axios.request(config);
-            console.log(response.data);
-            history("/listeFavoris")
-        } catch (error) {
-            console.error('Error validating announcement:', error);
-        }
-    };
 
     useEffect(() => {
         const fetchAnnonceDetail = async () => {
