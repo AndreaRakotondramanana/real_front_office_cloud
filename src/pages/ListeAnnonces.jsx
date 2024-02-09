@@ -88,7 +88,7 @@ function ListeAnnonces() {
                   <div className="col-lg-4 col-md-8 col-12 order-1 order-lg-0">
                     <div className="custom-block-image-wrap">
                       <Link to="/">
-                        <img src={} className="custom-block-image img-fluid" alt="" />
+                        <img src={voitureAnnonce.photo} className="custom-block-image img-fluid" alt="" />
                         <i className="custom-block-icon bi-link"></i>
                       </Link>
                     </div>
@@ -124,7 +124,7 @@ function ListeAnnonces() {
                           </div>
                         </div>
                         <div className="d-flex align-items-center ms-lg-auto">
-                          <Link to={"/detailAnnonceLogin/"+voitureAnnonce.id_annonce} className="btn custom-btn">Voir les détails</Link>
+                          <Link to={"/detailAnnonceLogin/"+voitureAnnonce.id_voiture} className="btn custom-btn">Voir les détails</Link>
                         </div>
                       </div>
                     </div>

@@ -68,7 +68,7 @@ function ListeFavoris() {
               <div key={item.id_annonce} className="col-lg-6 col-12 mb-5 mb-lg-0">
                 <div className="custom-block-image-wrap">
                   <Link to="/">
-                    <img src={images[0]} className="custom-block-image img-fluid" alt="" />
+                    <img src={item.photo} className="custom-block-image img-fluid" alt="" />
                     <i className="custom-block-icon bi-link"></i>
                   </Link>
 

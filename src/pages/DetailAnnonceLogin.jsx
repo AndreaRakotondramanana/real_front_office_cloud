@@ -1,14 +1,67 @@
 import React from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import { Link, useParams } from 'react-router-dom';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 
 const images = [
   "car1.jpg"
 ];
 
 function DetailAnnonceLogin() {
-  const {id_annonce} = useParams();
+  const { id_voiture } = useParams();
+  const [annonceDetail, setAnnonceDetail] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const history = useNavigate();
+
+  const handleFavoris = async (id) => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      history('/connection');
+      return;
+    }
+    const url = `https://voiture-production-247e.up.railway.app/api/annonce/favoris/${id}`;
+
+    try {
+      const config = {
+        method: 'post',
+        url: url,
+        headers: {
+          'authorization': token
+        },
+      };
+
+      const response = await axios.request(config);
+      console.log(response.data);
+      history("/listeFavoris")
+    } catch (error) {
+      console.error('Error validating announcement:', error);
+    }
+  };
+
+  useEffect(() => {
+    const fetchAnnonceDetail = async () => {
+      try {
+        const response = await axios.get(`https://voiture-production-247e.up.railway.app/api/annonce/annonceValider/${id_voiture}`);
+        setAnnonceDetail(response.data[0]);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching annonce detail:', error);
+        setLoading(false);
+      }
+    };
+
+    fetchAnnonceDetail();
+  }, [id_voiture]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!annonceDetail) {
+    return <div>Detail not found</div>;
+  }
 
   return (
     <div className='DetailAnnonceLogin'>
@@ -49,7 +102,7 @@ function DetailAnnonceLogin() {
               <h2 class="mb-lg-5 mb-4">Details annonce</h2>
 
               <div class="custom-block-image-wrap">
-                <img src={images[0]} class="custom-block-image img-fluid" alt="" />
+                <img src={annonceDetail.photo} class="custom-block-image img-fluid" alt="" />
               </div>
 
               <div class="custom-block-info">
@@ -62,55 +115,61 @@ function DetailAnnonceLogin() {
                   <div class="col-lg-4 col-12">
                     <span class="custom-block-span">Marque:</span>
 
-                    <p class="mb-0">BMW</p>
+                    <p class="mb-0">{annonceDetail.marque}</p>
                   </div>
 
                   <div class="col-lg-4 col-12 my-3 my-lg-0">
-                    <span class="custom-block-span">Gamme:</span>
+                    <span class="custom-block-span">Model:</span>
 
-                    <p class="mb-0">Jsp</p>
+                    <p class="mb-0">{annonceDetail.model}</p>
                   </div>
 
-                  <div class="col-lg-4 col-12">
-                    <span class="custom-block-span">Type:</span>
+                  <div class="col-lg-4 col-12 my-3 my-lg-0">
+                    <span class="custom-block-span">Categorie:</span>
 
-                    <p class="mb-0">Jsp</p>
+                    <p class="mb-0">{annonceDetail.categorie}</p>
                   </div>
 
                   <div class="col-lg-4 col-12">
                     <span class="custom-block-span">Nombre de places:</span>
 
-                    <p class="mb-0">7</p>
+                    <p class="mb-0">{annonceDetail.place}</p>
                   </div>
 
                   <div class="col-lg-4 col-12 my-3 my-lg-0">
                     <span class="custom-block-span">Annee:</span>
 
-                    <p class="mb-0">2018</p>
+                    <p class="mb-0">{annonceDetail.annee}</p>
                   </div>
 
                   <div class="col-lg-4 col-12">
                     <span class="custom-block-span">Kilometrage:</span>
 
-                    <p class="mb-0">100000</p>
+                    <p class="mb-0">{annonceDetail.kilometrage}</p>
                   </div>
 
                   <div class="col-lg-4 col-12">
-                    <span class="custom-block-span">Etat du vehicule:</span>
+                    <span class="custom-block-span">Pays origine:</span>
 
-                    <p class="mb-0">BMW</p>
+                    <p class="mb-0">{annonceDetail.pays}</p>
+                  </div>
+
+                  <div class="col-lg-4 col-12 my-3 my-lg-0">
+                    <span class="custom-block-span">Couleur:</span>
+
+                    <p class="mb-0">{annonceDetail.couleur}</p>
                   </div>
 
                   <div class="col-lg-4 col-12 my-3 my-lg-0">
                     <span class="custom-block-span">Transmission:</span>
 
-                    <p class="mb-0">Jsp</p>
+                    <p class="mb-0">{annonceDetail.transmission}</p>
                   </div>
 
                   <div class="col-lg-4 col-12">
                     <span class="custom-block-span">Energie:</span>
 
-                    <p class="mb-0">Jsp</p>
+                    <p class="mb-0">{annonceDetail.energie}</p>
                   </div>
 
                   <div class="col-lg-4 col-12">
@@ -119,31 +178,32 @@ function DetailAnnonceLogin() {
                     <p class="mb-0">7</p>
                   </div>
 
-                  <div class="col-lg-4 col-12 my-3 my-lg-0">
-                    <span class="custom-block-span">Puissance:</span>
+                  <div class="col-lg-4 col-12">
+                    <span class="custom-block-span">Consommation:</span>
 
-                    <p class="mb-0">2018</p>
+                    <p class="mb-0">{annonceDetail.consommation}</p>
                   </div>
 
                   <div class="col-lg-4 col-12">
-                    <span class="custom-block-span">Nombre de cylindre:</span>
+                    <span class="custom-block-span">Matricule:</span>
 
-                    <p class="mb-0">100000</p>
+                    <p class="mb-0">{annonceDetail.matricule}</p>
                   </div>
 
-                  <div class="col-lg-4 col-12">
-                    <span class="custom-block-span">Motricite:</span>
 
-                    <p class="mb-0">100000</p>
+                  <div class="col-lg-4 col-12">
+                    <span class="custom-block-span">Dexcription:</span>
+
+                    <p class="mb-0">{annonceDetail.description}</p>
                   </div>
 
                   <div class="col-lg-12 col-12">
-                    <h4 class="mb-3">Prix: 1000000 Ar</h4>
+                    <h4 class="mb-3">Prix: {annonceDetail.prix} Ar</h4>
                   </div>
 
                   <Link to="/discussion" class="btn custom-btn smoothscroll me-3">Contacter</Link>
-                  <br/>
-                  <Link to="/listeFavoris" class="btn custom-btn smoothscroll me-3">Ajouter favoris</Link>
+                  <br />
+                  <button onClick={() => handleFavoris(annonceDetail.id_annonce)} class="btn custom-btn smoothscroll me-3">Ajouter aux favoris</button>
                 </div>
 
 
