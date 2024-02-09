@@ -6,7 +6,7 @@ import '../assets/css/styleAndrea.css';
 import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
-function DetailFavoris() {
+function DetailFavoris() {  
     const { id_voiture } = useParams();
     const [annonceDetail, setAnnonceDetail] = useState(null);
     const [loading, setLoading] = useState(true);
