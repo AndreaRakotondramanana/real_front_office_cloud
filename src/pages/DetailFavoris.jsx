@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function DetailFavoris() {
     const { id_voiture } = useParams();
