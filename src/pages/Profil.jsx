@@ -2,6 +2,8 @@ import React from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import '../assets/css/styleAndrea.css';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const images = [
@@ -9,6 +11,20 @@ const images = [
 ];
 
 function Profil() {
+  const [voitureAnnonces, setVoitureAnnonces] = useState([]);
+
+  useEffect(() => {
+    const fetchVoitureAnnonces = async () => {
+      try {
+        const response = await axios.get('https://voiture-production-247e.up.railway.app/api/annonce_details/myannonce');
+        setVoitureAnnonces(response.data);
+      } catch (error) {
+        console.error('Error fetching voiture annonces:', error);
+      }
+    };
+
+    fetchVoitureAnnonces();
+  }, []);
   return (
     <div className='Profil'>
       <Header />
@@ -74,71 +90,74 @@ function Profil() {
         </svg>
       </section>
 
-      <section class="membership-section section-padding" id="section_3">
+      <section class="events-section section-bg section-padding" id="section_4">
         <div class="container">
           <div class="row">
 
-            <div class="col-lg-12 col-12 text-center mx-auto mb-lg-5 mb-4">
-              <h2>Liste de vos <span>Annonces</span></h2>
+            <div class="col-lg-12 col-12">
+              <h2 class="mb-lg-3">Liste des annonces</h2>
             </div>
 
-            <div class="col-lg-12 col-12 mb-6 mb-lg-0">
+            <div>
+              {voitureAnnonces.map((voitureAnnonce) => (
+                <div key={voitureAnnonce.id_annonce} className="row custom-block custom-block-bg">
+                  <div className="col-lg-2 col-md-4 col-12 order-2 order-md-0 order-lg-0">
+                    <div className="custom-block-date-wrap d-flex d-lg-block d-md-block align-items-center mt-3 mt-lg-0 mt-md-0">
+                      <h6 className="custom-block-date mb-lg-1 mb-0 me-3 me-lg-0 me-md-0">24</h6>
+                      <strong className="text-white">Feb 2048</strong>
+                    </div>
+                  </div>
 
-              <div class="tab">
-                <table class="table text-center">
-                  <thead>
-                    <tr>
-                      <th>Date</th>
-                      <th>Voiture</th>
-                      <th>Date de vente</th>
-                      <th>Etat</th>
-                      <th></th>
-                      <th></th>
-                    </tr>
-                  </thead>
+                  <div className="col-lg-4 col-md-8 col-12 order-1 order-lg-0">
+                    <div className="custom-block-image-wrap">
+                      <Link to="/">
+                        <img src={voitureAnnonce.photo} className="custom-block-image img-fluid" alt="" />
+                        <i className="custom-block-icon bi-link"></i>
+                      </Link>
+                    </div>
+                  </div>
 
-                  <tbody>
-                    <tr>
-                      <td class="text-start">Truc</td>
-                      <td class="text-start">Truc</td>
-                      <td class="text-start">Truc</td>
-                      <td class="text-start">Truc</td>
-                      <td class="text-start"><Link to="/">Details</Link></td>
-                      <td class="text-start"><Link to="/">Supprimer</Link></td>
-                    </tr>
-                    <tr>
-                      <td class="text-start">Truc</td>
-                      <td class="text-start">Truc</td>
-                      <td class="text-start">Truc</td>
-                      <td class="text-start">Truc</td>
-                      <td class="text-start"><Link to="/">Details</Link></td>
-                      <td class="text-start"><Link to="/">Supprimer</Link></td>
-                    </tr>
-                    <tr>
-                      <td class="text-start">Truc</td>
-                      <td class="text-start">Truc</td>
-                      <td class="text-start">Truc</td>
-                      <td class="text-start">Truc</td>
-                      <td class="text-start"><Link to="/">Details</Link></td>
-                      <td class="text-start"><Link to="/">Supprimer</Link></td>
-                    </tr>
-                    <tr>
-                      <td class="text-start">Truc</td>
-                      <td class="text-start">Truc</td>
-                      <td class="text-start">Truc</td>
-                      <td class="text-start">Truc</td>
-                      <td class="text-start"><Link to="/">Details</Link></td>
-                      <td class="text-start"><Link to="/">Supprimer</Link></td>
-                    </tr>
+                  <div className="col-lg-6 col-12 order-3 order-lg-0">
+                    <div className="custom-block-info mt-2 mt-lg-0">
+                      <div className="d-flex flex-wrap align-items-center mb-1">
+                        <span className="custom-block-span">Annee:</span>
+                        <p className="mb-0">{voitureAnnonce.annee}</p>
+                      </div>
 
-                  </tbody>
-                </table>
-              </div>
+                      <div className="d-flex flex-wrap align-items-center mb-1">
+                        <span className="custom-block-span">Marque:</span>
+                        <p className="mb-0">{voitureAnnonce.marque}</p>
+                      </div>
+
+                      <div className="d-flex flex-wrap align-items-center mb-1">
+                        <span className="custom-block-span">Model:</span>
+                        <p className="mb-0">{voitureAnnonce.model}</p>
+                      </div>
+
+                      <div className="d-flex flex-wrap align-items-center mb-1">
+                        <span className="custom-block-span">Categorie:</span>
+                        <p className="mb-0">{voitureAnnonce.categorie}</p>
+                      </div>
+
+                      <div className="d-flex flex-wrap border-top mt-4 pt-3">
+                        <div className="mb-4 mb-lg-0">
+                          <div className="d-flex flex-wrap align-items-center">
+                            <span className="custom-block-span">Prix:</span>
+                            <p className="mb-0">{voitureAnnonce.prix}</p>
+                          </div>
+                        </div>
+                        <div className="d-flex align-items-center ms-lg-auto">
+                          <Link to={"/detailAnnoncefav/"+voitureAnnonce.id_voiture} className="btn custom-btn">Voir les détails</Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-
           </div>
-        </div >
-      </section >
+        </div>
+      </section>
 
       <Footer />
     </div >

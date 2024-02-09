@@ -73,7 +73,7 @@ function ListeFavoris() {
                   </div>
 
                   <div className="custom-btn-wrap">
-                    <Link to={"/detailAnnonceLogin/"+item.id_annonce} className="btn custom-btn">Details</Link>
+                    <Link to={"/detailAnnoncefav/"+item.id_voiture} className="btn custom-btn">Details</Link>
                   </div>
                 </div>
 
