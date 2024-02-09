@@ -9,9 +9,6 @@ function DetailFavoris() {
     const { id_voiture } = useParams();
     const [annonceDetail, setAnnonceDetail] = useState(null);
     const [loading, setLoading] = useState(true);
-    const history = useNavigate();
-
-
 
     useEffect(() => {
         const fetchAnnonceDetail = async () => {
