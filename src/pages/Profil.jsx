@@ -15,8 +15,21 @@ function Profil() {
 
   useEffect(() => {
     const fetchVoitureAnnonces = async () => {
+      const token = localStorage.getItem('token');
+      if (!token) {
+      history('/connection');
+      return;
+      }
+      const url = 'https://voiture-production-247e.up.railway.app/api/annonce_details/myannonce';
       try {
-        const response = await axios.get('https://voiture-production-247e.up.railway.app/api/annonce_details/myannonce');
+        const config = {
+          method: 'get',
+          url: url,
+          headers: {
+            'authorization': token
+          },
+        };
+        const response = await axios.request(config);
         setVoitureAnnonces(response.data);
       } catch (error) {
         console.error('Error fetching voiture annonces:', error);
