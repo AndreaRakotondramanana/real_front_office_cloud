@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import '../assets/css/styleAndrea.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const images = [
   "she.jpg"
@@ -12,11 +12,12 @@ const images = [
 
 function Profil() {
   const [voitureAnnonces, setVoitureAnnonces] = useState([]);
-
+  const history = useNavigate();
   useEffect(() => {
     const fetchVoitureAnnonces = async () => {
       const token = localStorage.getItem('token');
       if (!token) {
+        
       history('/connection');
       return;
       }
