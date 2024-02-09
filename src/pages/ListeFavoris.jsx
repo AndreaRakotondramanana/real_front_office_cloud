@@ -5,10 +5,6 @@ import '../assets/css/styleAndrea.css';
 import { Link } from 'react-router-dom';
 import { get } from '../axios_utils';
 
-const images = [
-  "car5.jpg",
-  "car6.jpg"
-];
 
 function ListeFavoris() {
   const [data, setData] = useState([]);
