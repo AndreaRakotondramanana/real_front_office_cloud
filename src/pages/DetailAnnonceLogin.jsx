@@ -5,9 +5,6 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 
-const images = [
-  "car1.jpg"
-];
 
 function DetailAnnonceLogin() {
   const { id_voiture } = useParams();

@@ -1,7 +1,7 @@
 import axios from 'axios';
 export function handleChange(e,formData,setFormData) {
     const { name, value } = e.target;
-    if (formData.get(name)!="") {
+    if (formData.get(name)!=="") {
         formData.set(name,value);
     } else {
         formData.append(name,value);

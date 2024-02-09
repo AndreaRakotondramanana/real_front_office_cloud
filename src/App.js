@@ -1,15 +1,12 @@
 import React from 'react';
 import './App.css';
 import HomePage from './pages/ListeAnnonces';
-import DetailAnnonce from './pages/DetailAnnonce';
 import DetailAnnonceLogin from './pages/DetailAnnonceLogin';
 import ListeFavoris from './pages/ListeFavoris';
 import Profil from './pages/Profil';
-import ProfilAutre from './pages/ProfilAutre';
 import Recherche from './pages/Recherche';
 import ResultatRechercheVoiture from './pages/ResultatRechercheVoiture';
 import Connection from './pages/Connection';
-import ListeDiscussions from './pages/ListeDiscussions';
 import ListeDiscussion2 from './pages/listeDiscussion2';
 import ResultatRecherche from './pages/ResultatRecherche';
 import Discussion from './pages/Discussion';
@@ -27,15 +24,12 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          {/* <Route path="/detailAnnonce" element={<DetailAnnonce />} /> */}
           <Route path="/detailAnnonceLogin/:id_voiture" element={<DetailAnnonceLogin />} />
           <Route path="/listeFavoris" element={<ListeFavoris />} />
           <Route path="/profil" element={<Profil />} />
-          {/* <Route path="/profilAutre" element={<ProfilAutre />} /> */}
           <Route path="/recherche" element={<Recherche />} />
           <Route path="/resultatRechercheVoiture" element={<ResultatRechercheVoiture />} />
           <Route path="/connection" element={<Connection />} />
-          {/* <Route path="/listeDiscussions" element={<ListeDiscussions />} /> */}
           <Route path="/listeDiscussion2" element={<ListeDiscussion2 />} />
           <Route path="/resultatRecherche" element={<ResultatRecherche />} />
           <Route path="/discussion" element={<Discussion />} />

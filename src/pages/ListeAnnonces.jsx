@@ -6,10 +6,6 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/css/styleAndrea.css';
 
-const images = [
-  "car1.jpg",
-  "car2.jpg"
-];
 
 function ListeAnnonces() {
   const [voitureAnnonces, setVoitureAnnonces] = useState([]);
