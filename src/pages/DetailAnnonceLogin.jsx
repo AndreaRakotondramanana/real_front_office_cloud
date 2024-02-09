@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import axios from 'axios';
+import '../assets/css/styleAndrea.css';
 import { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 
@@ -53,7 +54,22 @@ function DetailAnnonceLogin() {
   }, [id_voiture]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className='loading'>
+      <section class="loader">
+
+        <div className="slider" style={{ '--i': 0 }}>
+        </div>
+        <div className="slider" style={{ '--i': 1 }}>
+        </div>
+        <div className="slider" style={{ '--i': 2 }}>
+        </div>
+        <div className="slider" style={{ '--i': 3 }}>
+        </div>
+        <div className="slider" style={{ '--i': 4 }}>
+        </div>
+
+      </section>
+    </div>;
   }
 
   if (!annonceDetail) {

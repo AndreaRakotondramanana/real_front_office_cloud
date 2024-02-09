@@ -3,38 +3,12 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function DetailFavoris() {
     const { id_voiture } = useParams();
     const [annonceDetail, setAnnonceDetail] = useState(null);
     const [loading, setLoading] = useState(true);
-    const history = useNavigate();
-
-    const handleFavoris = async (id) => {
-        const token = localStorage.getItem('token');
-        if (!token) {
-            history('/connection');
-            return;
-        }
-        const url = `https://voiture-production-247e.up.railway.app/api/annonce/favoris/${id}`;
-
-        try {
-            const config = {
-                method: 'post',
-                url: url,
-                headers: {
-                    'authorization': token
-                },
-            };
-
-            const response = await axios.request(config);
-            console.log(response.data);
-            history("/listeFavoris")
-        } catch (error) {
-            console.error('Error validating announcement:', error);
-        }
-    };
 
     useEffect(() => {
         const fetchAnnonceDetail = async () => {

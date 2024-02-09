@@ -11,6 +11,7 @@ import Connection from './pages/Connection';
 import ListeDiscussion2 from './pages/listeDiscussion2';
 import ResultatRecherche from './pages/ResultatRecherche';
 import Discussion from './pages/Discussion';
+import { Helmet } from 'react-helmet';
 
 
 // Importer les modules nécessaires depuis react-router-dom
@@ -21,7 +22,10 @@ function App() {
   return (
     <div className="App">
       {/* <Header /> */}
-
+      
+      <Helmet>
+        <title>Fiar'ako</title>
+      </Helmet>
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
