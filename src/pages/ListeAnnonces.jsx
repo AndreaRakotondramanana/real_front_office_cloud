@@ -35,7 +35,7 @@ function ListeAnnonces() {
           </path>
         </svg>
 
-        <div class="container">
+        <div class="container">  
           <div class="row">
 
             <div class="col-lg-6 col-12 mb-5 mb-lg-0">
