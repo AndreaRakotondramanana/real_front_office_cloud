@@ -38,7 +38,7 @@ function Profil() {
     };
 
     fetchVoitureAnnonces();
-  }, []);
+  }, [history]);
   return (
     <div className='Profil'>
       <Header />
